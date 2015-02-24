@@ -1,0 +1,36 @@
+//----------------------------
+//- JADE AXIS TEMPLATE
+//-
+//- Builds Axis for Visualizations
+//-
+
+
+//- Use the data[x].y attribute to find the max height
+- var max_height = Math.max.apply(null, Object.keys(data).map(function(e){return data[e].y}))
+- var x_padding  = 10
+- var y_padding  = 25
+- var y_origin   = max_height+25
+- var x_origin   = 25
+
+//- Open the SVG:
+svg(width=width, height=max_height+50)
+
+  //- Y-Axis
+  line(x1=x_origin, y1=y_origin, x2=x_origin, y2=0, stroke="black", stroke-width=1)
+
+  //- X-Axis
+  line(x1=x_origin, y1=y_origin, x2=width, y2=y_origin, stroke="black", stroke-width=1)
+
+  //- Y-Axis ticks
+  -var maj_tick_size   = (max_height/5)
+  -var min_tick_size   = (max_height/10)
+  -var y_ticker        = y_origin
+  while y_ticker >= 0
+    if (y_ticker % maj_tick_size == 0)
+      line(x1=x_origin-10, x2=x_origin, y1=y_ticker, y2=y_ticker, stroke="black", stroke-width=1)
+      text(x=x_origin-25, y=y_ticker) #{y_origin - y_ticker}
+
+    else if (y_ticker % min_tick_size == 0)
+      line(y1=y_ticker, y2=y_ticker, x1=x_origin-5, x2=x_origin, , stroke="black", stroke-width=1)
+
+    -y_ticker -= 1

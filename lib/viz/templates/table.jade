@@ -1,9 +1,7 @@
 table
+  each val,key in data[0]
+    th #{key}
+  each d in data
     tr
-        td John
-        td 3
-        td 5
-    tr
-        td Adam
-        td 4
-        td 8
+      each val,key in d
+        td #{val}
