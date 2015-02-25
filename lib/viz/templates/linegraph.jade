@@ -1,8 +1,14 @@
+include ./axis.jade
+
 //- Add The title
 h3 #{title}
 
 //-Include the Axis
-include ./axis.jade
+
+svg(width=width, height=max_height+50)
+
+  +axis(x_origin, y_origin, maj_tick_size, min_tick_size)
+
   //-Put the data in
   -for (var i = 0; i < data.length; i++)
     //- If thre should be a line, draw the line first
