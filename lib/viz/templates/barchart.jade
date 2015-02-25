@@ -8,7 +8,12 @@ svg(width=width, height=max_height+50)
 
   each d, index in data
     //- Create The bar
-    rect(width=d.w, height=d.y, x=x_origin+(index*padding), y=y_origin-d.y)
+    unless d.color
+      if (index%2==0)
+        - d.color = "red"
+      else
+        - d.color = "blue"
+    rect(width=d.w, height=d.y, x=x_origin+(index*padding), y=y_origin-d.y, fill=d.color)
 
     //- Add an x label
     text(x=x_origin + d.w/2+index*padding y=y_origin+20 fill=blue) #{index+1}
