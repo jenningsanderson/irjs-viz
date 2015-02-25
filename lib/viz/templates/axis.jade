@@ -38,7 +38,7 @@ mixin x_ticks(x_origin, y_origin, maj_tick_size, min_tick_size)
     if ( (x_ticker-x_origin) % min_tick_size == 0)
       if ( (x_ticker-x_origin) % maj_tick_size == 0)
         line(x1=x_ticker, x2=x_ticker, y1=y_origin, y2=y_origin+10, stroke="black", stroke-width=1)
-        text(x=x_ticker, y=y_origin-20) #{x_ticker-x_origin}
+        text(x=x_ticker, y=y_origin+20) #{x_ticker-x_origin}
       else
         line(x1=x_ticker, x2=x_ticker, y1=y_origin, y2=y_origin+5, stroke="black", stroke-width=1)
     -x_ticker += 1
