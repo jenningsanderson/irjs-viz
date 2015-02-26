@@ -2,9 +2,9 @@ include ./axis.jade
 
 h3 #{title}
 
-svg(width=width, height=max_height+50)
+svg(width=width, height=100+50)
 
-  +axis(x_origin, y_origin, maj_tick_size, min_tick_size)
+  +axis(x_origin, y_origin, 25, 5)
 
   each d, index in data
     //- Create The bar
@@ -16,4 +16,4 @@ svg(width=width, height=max_height+50)
     rect(width=d.w, height=d.y, x=x_origin+(index*padding), y=y_origin-d.y, fill=d.color)
 
     //- Add an x label
-    text(x=x_origin + d.w/2+index*padding y=y_origin+20 fill=blue) #{index+1}
+    text(x=x_origin + d.w/2+index*padding y=y_origin+20 color=blue) #{index+1}

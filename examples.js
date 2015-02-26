@@ -27,10 +27,9 @@ domout.svg(viz.circles(data))
 
 domout.html('<h1>Barchart</h1>')
 domout.svg(viz.barchart(one_d_data(4), {
-    title: 'Bar Chart',
+    title: 'Bar Chart from Sample Data',
     colors: ['blue', 'red', 'green', 'orange'],
-    widths: [59,32,1,3],
-    padding: 3
+    widths: [59,32,1,3]
 }))
 
 domout.html('<h1>Line Graph</h1>')
