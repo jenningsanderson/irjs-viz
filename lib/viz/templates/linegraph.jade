@@ -16,7 +16,7 @@ svg(width=width, height=max_height+50)
     if (i < data.length-1)
       - var p1 = data[i]
       - var p2 = data[i+1]
-      line(x1=x_origin+p1.x, y1=y_origin-p1.y, x2=x_origin+p2.x, y2=y_origin-p2.y, stroke="black", stroke-width=1)
+      line(x1=x_origin+p1.x, y1=y_origin-p1.y, x2=x_origin+p2.x, y2=y_origin-p2.y, stroke=line_color, stroke-width=line_width)
 
     //- Now draw the point
     - var p1 = data[i]
